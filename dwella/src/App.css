@@ -1,0 +1,122 @@
+/* General Body and App Styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.App {
+  text-align: center;
+}
+
+/* Navigation Bar */
+.navbar {
+  background-color: #333;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+.nav-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+  padding: 10px;
+}
+
+.nav-links a:hover {
+  background-color: #555;
+  border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+  background-color: #1abc9c;
+  color: white;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 1.2em;
+}
+
+.cta-button {
+  padding: 10px 20px;
+  background-color: #2980b9;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.cta-button:hover {
+  background-color: #21618c;
+}
+
+/* About Section */
+.about-section,
+.hobbies-section,
+.contact-section,
+.services-section {
+  padding: 50px 20px;
+  background-color: white;
+  margin: 20px 0;
+}
+
+h2 {
+  color: #2980b9;
+}
+
+/* Contact Section */
+.contact-section {
+  background-color: #f4f4f4;
+  padding: 50px;
+}
+
+/* Services Section */
+.service-button {
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.service-button:hover {
+  background-color: #c0392b;
+}
+
+/* Login Section */
+.login-section {
+  padding: 50px;
+}
+
+form {
+  display: inline-block;
+  text-align: left;
+}
+
+form div {
+  margin-bottom: 10px;
+}
