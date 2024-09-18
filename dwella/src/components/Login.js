@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './Login.css';
+import '../Login.css';
 
 const Login = () => {
   const [isSignUp, setIsSignUp] = useState(false);
@@ -103,7 +103,7 @@ const Login = () => {
                 <option value="using">Using a Service</option>
               </select>
             </div>
-            <button type="submit">Sign Up</button>
+            <button type="submit" onClick={handleSubmit}>Sign Up</button>
           </form>
           {errors && (
             <div className="error-messages">
