@@ -5,6 +5,8 @@ import About from './components/About.js';
 import Contacts from './components/Contacts.js';
 import Services from './components/Services.js';
 import Login from './components/Login.js';
+import AddListing from './components/AddListing';
+import ViewListings from './components/ViewListings';
 import './App.css';
 
 const App = () => {
@@ -28,6 +30,8 @@ const App = () => {
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/services" element={<Services />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/add-listing" component={AddListing} />
+          <Route path="/view-listings" component={ViewListings} />
         </Routes>
       </div>
     </Router>

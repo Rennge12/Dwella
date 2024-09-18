@@ -40,7 +40,6 @@ const Login = () => {
       });
 
       console.log('User registered successfully:', response.data);
-      // Reset the form or redirect the user to another page after successful registration
       setFormData({
         fullName: '',
         email: '',
@@ -48,7 +47,14 @@ const Login = () => {
         confirmPassword: '',
         serviceType: '',
       });
-      setErrors(null);  // Clear errors on success
+      window.location.href = '/login';
+      setErrors(null);
+      const user = response.data.user;
+      if (user.service_type === 'offering') {
+        window.location.href = '/add-listing';
+    } else if (user.service_type === 'using') {
+        window.location.href = '/view-listings';
+    }
     } catch (error) {
       if (error.response && error.response.data.errors) {
         setErrors(error.response.data.errors);
@@ -71,7 +77,7 @@ const Login = () => {
               <label>Password: </label>
               <input type="password" name="password" />
             </div>
-            <button type="submit">Log In</button>
+            <button type="submit" onClick={handleSubmit}>Log In</button>
           </form>
           <p>Don't have an account? <button className="switch-button" onClick={handleSignUpSwitch}>Sign Up</button></p>
         </div>

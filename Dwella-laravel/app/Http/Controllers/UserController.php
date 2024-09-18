@@ -32,7 +32,7 @@ class UserController extends Controller
             'service_type' => $request->service_type,
         ]);
 
-        return response()->json(['message' => 'User registered successfully', 'user' => $user], 201);
+        return response()->json(['message' => 'User registered successfully, please log in'], 201);
     }
 }
 
