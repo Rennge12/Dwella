@@ -3,9 +3,11 @@ import React from 'react';
 const Home = () => {
   return (
     <header className="hero">
-      <h1>Welcome to My Landing Page</h1>
-      <p>Join me on my journey of learning programming and staying active with sports.</p>
-      <a href="/about" className="cta-button">Learn More</a>
+      <h1>Esiet sveicināti Dwella!</h1>
+      <p>Dwella uzskata, ka, meklējot ērtu naktsmītni, nevajadzētu maksāt dārgi. Neatkarīgi no tā, 
+        vai plānojat īsu izbraukumu, pārceļaties vai vienkārši īslaicīgi vēlaties pārcelties, 
+        mēs atvieglosim Jums iespēju atrast Jūsu vajadzībām atbilstošas, lētas un kvalitatīvas mītnes..</p>
+      <a href="/about" className="cta-button">Uzzini vairāk!</a>
     </header>
   );
 };

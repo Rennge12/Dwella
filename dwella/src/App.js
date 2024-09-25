@@ -30,8 +30,8 @@ const App = () => {
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/services" element={<Services />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/add-listing" component={AddListing} />
-          <Route path="/view-listings" component={ViewListings} />
+          <Route path="/AddListing" element={<AddListing />} />
+          <Route path="/ViewListings" element={<ViewListings />} />
         </Routes>
       </div>
     </Router>

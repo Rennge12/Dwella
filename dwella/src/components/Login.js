@@ -1,9 +1,19 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import '../Login.css';
 
-const Login = () => {
+function Login() {
   const [isSignUp, setIsSignUp] = useState(false);
+  const [user, setUser] = useState(null);
+  const login = (name, service_type) => {
+    localStorage.setItem('name', name);
+    localStorage.setItem('service_type', service_type);
+    setUser({userId: name, service_type})
+  }
+  const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -50,11 +60,7 @@ const Login = () => {
       window.location.href = '/login';
       setErrors(null);
       const user = response.data.user;
-      if (user.service_type === 'offering') {
-        window.location.href = '/add-listing';
-    } else if (user.service_type === 'using') {
-        window.location.href = '/view-listings';
-    }
+      
     } catch (error) {
       if (error.response && error.response.data.errors) {
         setErrors(error.response.data.errors);
@@ -62,22 +68,50 @@ const Login = () => {
       console.error('Registration error:', error);
     }
   };
+  
+ 
+    
+  
+    const handleLogin = async (e) => {
+      e.preventDefault();
+      try {
+        const response = await axios.post('http://localhost:8000/api/login', { email, password });
+        console.log(response.data);
+  
+        if (response.data.status === 'success') {
+          const { userID, service_type } = response.data;
+          login(userID, email, service_type);
+          if (response.data.serviceType === 'offering') {
+            console.log("sie rieksti");
+            navigate('/AddListing');
+        } else if (response.data.serviceType === 'using') {
+          console.log("sie rieks");
+            navigate('/ViewListings');
+        }
+        }
+      } catch (error) {
+        console.error('Login error:', error);
+      }
+    };
+  
 
   return (
     <div className="login-signup-section">
       {!isSignUp ? (
         <div className="login-form">
           <h2>Log In</h2>
-          <form>
+          <form onSubmit={handleLogin}>
             <div>
               <label>Email: </label>
-              <input type="email" name="email" />
+              <input type="text" name="email" value={email}
+              onChange={(e) => setEmail(e.target.value)}/>
             </div>
             <div>
               <label>Password: </label>
-              <input type="password" name="password" />
+              <input type="password" name="password" value={password}
+              onChange={(e) => setPassword(e.target.value)}/>
             </div>
-            <button type="submit" onClick={handleSubmit}>Log In</button>
+            <button type="submit">Log In</button>
           </form>
           <p>Don't have an account? <button className="switch-button" onClick={handleSignUpSwitch}>Sign Up</button></p>
         </div>

@@ -5,12 +5,20 @@ const About = () => {
     <section className="about-section">
       <h2>About This Project</h2>
       <p>
-        I'm passionate about learning programming, exploring the latest in tech, and constantly improving my skills.
-        When I'm not coding, you’ll find me playing football or engaged in any other sport that keeps me moving.
+      Kāpēc izvēlēties Dwella?
+Pieejamas cenas: Mēs specializējamies, lai nodrošinātu jums draudzīgu mājokļu, dzīvokļu un īres vietu īri iekārojamās vietās.
+Vienkāršs rezervēšanas process: Mūsu vienkāršā rezervēšanas platforma nodrošina, ka jūs varat atrast, rezervēt un nodrošināt savu mājokli tikai ar dažiem klikšķiem.
+Dažādas iespējas: No mājīgiem studijas tipa dzīvokļiem līdz plašām ģimenes mājām - mūsu piedāvājumā ir naktsmītnes, kas piemērotas visiem uzturēšanās veidiem un vēlmēm.
+Pārbaudīti piedāvājumi: Mēs rūpīgi pārbaudām katru piedāvājumu, lai nodrošinātu jums drošu un patīkamu uzturēšanos.
+Elastīgi noteikumi: Neatkarīgi no tā, vai meklējat īstermiņa vai ilgtermiņa īri, mēs piedāvājam jums nepieciešamo elastību.
+Kā tas darbojas:
+Mājokļu meklēšana jūsu vēlamajā vietā.
+Salīdziniet labākos piedāvājumus, pamatojoties uz savu budžetu un vajadzībām.
+Veiciet drošu un vienkāršu rezervāciju bez slēptās maksas.
+Palieciet un izbaudiet savas pieejamās mājas prom no mājām!
       </p>
       <p>
-        I value communication above all else—whether working on a team or talking to new people, I believe clear and effective
-        communication is the key to success.
+        
       </p>
     </section>
   );
