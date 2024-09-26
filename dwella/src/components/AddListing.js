@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
+import '../styles/AddListing.css';
 
 const AddListing = () => {
     const [listingData, setListingData] = useState({
         homeType: '',
         description: '',
-        price: ''
-    });
-    const [formData, setFormData] = useState({
-        description: '',
         price: '',
-        homeType: '',
-      });
+        location: '',
+        imageURL: ''
+    });
     const handleChange = (e) => {
         const { name, value } = e.target;
         setListingData({ ...listingData, [name]: value });
@@ -18,17 +16,16 @@ const AddListing = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // You can now send this data to the backend API for adding a listing
         console.log('Listing added:', listingData);
     };
 
     return (
-        <div>
+        <div className="form-container">
             <h2>Pievienot sludinājumu</h2>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>Dzīvoklis vai māja:</label>
-                    <select name="homeType" value={formData.homeType} onChange={handleChange}>
+                    <select name="homeType" value={listingData.homeType} onChange={handleChange}>
                 <option value="">Izvēlies</option>
                 <option value="offering">Dzīvoklis</option>
                 <option value="using">Māja</option>
@@ -38,16 +35,28 @@ const AddListing = () => {
                     <label>Detaļas:</label>
                     <textarea
                         name="description"
-                        value={listingData.description}
                         onChange={handleChange}
                     ></textarea>
                 </div>
                 <div>
-                    <label>Price:</label>
+                    <label>Cena:</label>
                     <input
                         type="number"
                         name="price"
-                        value={listingData.price}
+                        onChange={handleChange}
+                    />
+                </div>
+                <div>
+                    <label>Atrašanās vieta:</label>
+                    <input
+                        name="location"
+                        onChange={handleChange}
+                    />
+                </div>
+                <div>
+                    <label>Attēli:</label>
+                    <input
+                        name="images"
                         onChange={handleChange}
                     />
                 </div>

@@ -14,6 +14,11 @@ return new class extends Migration
         Schema::create('listings', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('homeType');
+            $table->string('imageURL', 3000);
+            $table->string('description');
+            $table->integer('price');
+            $table->string('location');
         });
     }
 

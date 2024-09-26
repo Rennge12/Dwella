@@ -3,9 +3,9 @@ import React from 'react';
 const Services = () => {
   return (
     <section className="services-section">
-      <h2>Provide Your Service</h2>
-      <p>If you have a service to offer, feel free to connect! I'm open to collaborations in the programming world.</p>
-      <a className="service-button" href="/AddListing">Contact Me</a>
+      <h2>Sniedz savu pakalpojumu</h2>
+      <p>Jums ir iespēja dot citiem dzīvesvietu par lētāku īres maksu.</p>
+      <a className="service-button" href="/AddListing">Pievienot sludinājumu</a>
     </section>
   );
 };
