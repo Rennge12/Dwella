@@ -16,11 +16,11 @@ const App = () => {
         {/* Navigation Bar */}
         <nav className="navbar">
           <ul className="nav-links">
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/contacts">Contacts</Link></li>
-            <li><Link to="/services">Provide Your Service</Link></li>
-            <li><Link to="/login">Log In</Link></li>
+            <li><Link to="/">Sākums</Link></li>
+            <li><Link to="/about">Par mums</Link></li>
+            <li><Link to="/contacts">Kontakti</Link></li>
+            <li><Link to="/services">Piedāvā savu pakalpojumu</Link></li>
+            <li><Link to="/login">Ienākt</Link></li>
           </ul>
         </nav>
 

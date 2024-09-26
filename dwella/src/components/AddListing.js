@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 
 const AddListing = () => {
     const [listingData, setListingData] = useState({
-        title: '',
+        homeType: '',
         description: '',
         price: ''
     });
-
+    const [formData, setFormData] = useState({
+        description: '',
+        price: '',
+        homeType: '',
+      });
     const handleChange = (e) => {
         const { name, value } = e.target;
         setListingData({ ...listingData, [name]: value });
@@ -20,19 +24,18 @@ const AddListing = () => {
 
     return (
         <div>
-            <h2>Add a New Listing</h2>
+            <h2>Pievienot sludinājumu</h2>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label>Title:</label>
-                    <input
-                        type="text"
-                        name="title"
-                        value={listingData.title}
-                        onChange={handleChange}
-                    />
+                    <label>Dzīvoklis vai māja:</label>
+                    <select name="homeType" value={formData.homeType} onChange={handleChange}>
+                <option value="">Izvēlies</option>
+                <option value="offering">Dzīvoklis</option>
+                <option value="using">Māja</option>
+              </select>
                 </div>
                 <div>
-                    <label>Description:</label>
+                    <label>Detaļas:</label>
                     <textarea
                         name="description"
                         value={listingData.description}
@@ -48,7 +51,7 @@ const AddListing = () => {
                         onChange={handleChange}
                     />
                 </div>
-                <button type="submit">Add Listing</button>
+                <button type="submit">Pievienot</button>
             </form>
         </div>
     );

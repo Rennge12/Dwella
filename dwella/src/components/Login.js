@@ -99,51 +99,51 @@ function Login() {
     <div className="login-signup-section">
       {!isSignUp ? (
         <div className="login-form">
-          <h2>Log In</h2>
+          <h2>Ienākt</h2>
           <form onSubmit={handleLogin}>
             <div>
-              <label>Email: </label>
+              <label>E-pasts: </label>
               <input type="text" name="email" value={email}
               onChange={(e) => setEmail(e.target.value)}/>
             </div>
             <div>
-              <label>Password: </label>
+              <label>Parole: </label>
               <input type="password" name="password" value={password}
               onChange={(e) => setPassword(e.target.value)}/>
             </div>
-            <button type="submit">Log In</button>
+            <button type="submit">Ienākt</button>
           </form>
-          <p>Don't have an account? <button className="switch-button" onClick={handleSignUpSwitch}>Sign Up</button></p>
+          <p>Nav konta? <button className="switch-button" onClick={handleSignUpSwitch}>Reģistrēties </button></p>
         </div>
       ) : (
         <div className="signup-form">
-          <h2>Sign Up</h2>
+          <h2>Reģistrēties</h2>
           <form onSubmit={handleSubmit}>
             <div>
-              <label>Full Name: </label>
+              <label>Vārds: </label>
               <input type="text" name="fullName" value={formData.fullName} onChange={handleChange} />
             </div>
             <div>
-              <label>Email: </label>
+              <label>E-pasts: </label>
               <input type="email" name="email" value={formData.email} onChange={handleChange} />
             </div>
             <div>
-              <label>Password: </label>
+              <label>Parole: </label>
               <input type="password" name="password" value={formData.password} onChange={handleChange} />
             </div>
             <div>
-              <label>Confirm Password: </label>
+              <label>Parole atkārtoti: </label>
               <input type="password" name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} />
             </div>
             <div>
-              <label>Are you offering a service or using a service?</label>
+              <label>Sniegsi vai saņemsi pakalpojumu?</label>
               <select name="serviceType" value={formData.serviceType} onChange={handleChange}>
-                <option value="">Select an option</option>
-                <option value="offering">Offering a Service</option>
-                <option value="using">Using a Service</option>
+                <option value="">Izvēlies</option>
+                <option value="offering">Sniedzu pakalpojumu</option>
+                <option value="using">Saņemšu pakalpojumu</option>
               </select>
             </div>
-            <button type="submit" onClick={handleSubmit}>Sign Up</button>
+            <button type="submit" onClick={handleSubmit}>Reģistrēties</button>
           </form>
           {errors && (
             <div className="error-messages">
@@ -152,7 +152,7 @@ function Login() {
               ))}
             </div>
           )}
-          <p>Already have an account? <button className="switch-button" onClick={handleSignUpSwitch}>Log In</button></p>
+          <p>Jau ir konts? <button className="switch-button" onClick={handleSignUpSwitch}>Ienākt</button></p>
         </div>
       )}
     </div>
