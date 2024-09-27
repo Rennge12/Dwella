@@ -21,7 +21,7 @@ const ViewListings = () => {
 
     return (
         <div>
-            <h2>Available Listings</h2>
+            <h2>Sludinājumi</h2>
             <ul>
                 {listings.map((listing) => (
                     <li key={listing.id}>
