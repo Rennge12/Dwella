@@ -57,6 +57,7 @@ const AddListing = () => {
                     <label>Attēli:</label>
                     <input
                         name="images"
+                        type= "file"
                         onChange={handleChange}
                     />
                 </div>

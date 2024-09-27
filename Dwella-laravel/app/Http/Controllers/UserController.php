@@ -16,16 +16,14 @@ class UserController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8',  // Password confirmation
-            'service_type' => 'required|string|in:offering,using',  // Must be either offering or using
+            'password' => 'required|string|min:8',
+            'service_type' => 'required|string|in:offering,using', 
         ]);
 
-        // If validation fails, return an error response
         if ($validator->fails()) {
             return response()->json(['errors' => $validator->errors()], 400);
         }
 
-        // Create the user in the database
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
