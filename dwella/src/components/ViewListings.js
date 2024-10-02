@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import '../ViewListings.css';
+import '../styles/ViewListings.css';
 
 const ViewListings = () => {
     const [listings, setListings] = useState([]);
@@ -10,6 +10,7 @@ const ViewListings = () => {
         const fetchListings = async () => {
             try {
                 const response = await axios.get('http://localhost:8000/api/listings');
+                console.log(response.data);
                 setListings(response.data);
             } catch (error) {
                 console.error('Error fetching listings:', error);
@@ -22,15 +23,19 @@ const ViewListings = () => {
     return (
         <div>
             <h2>Sludinājumi</h2>
-            <ul>
-                {listings.map((listing) => (
+            <div className="sort">
+            {listings.map((listing) => (
+                <div className="listing-card">
                     <li key={listing.id}>
-                        <h3>{listing.title}</h3>
-                        <p>{listing.description}</p>
-                        <p>Price: {listing.price}</p>
+                        <h className="listing-homeType">{listing.homeType}</h>
+                        <p>{listing.location}</p>
+                        <p className="listing-description">{listing.description}</p>
+                        <img className="" src={listing.imageURL}></img>
+                        <p className="listing-price">Price: EUR{listing.price}</p>
                     </li>
-                ))}
-            </ul>
+                </div>
+            ))}
+            </div>
         </div>
     );
 };

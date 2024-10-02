@@ -10,7 +10,7 @@ class ListingsController extends Controller
 {
     public function addListing(Request $request){
         $validator = Validator::make($request->all(), [
-            'imageURL' => 'required',
+            'imageURL' => '',
             'description' => 'required',
             'homeType' => 'required',
             'price' => 'required|numeric|min:1',
@@ -29,5 +29,8 @@ class ListingsController extends Controller
         return response()->json(['message' => 'Listing created'], 201);
     }
 
-    
+    public function listings(){
+        $listings = Listing::all();
+        return response()->json($listings);
+    }
 }

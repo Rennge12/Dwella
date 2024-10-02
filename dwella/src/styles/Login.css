@@ -65,4 +65,9 @@
   select {
     padding: 10px;
   }
-  
+  .error-messages {
+    color: #e74c3c; /* Red color for error */
+    font-size: 0.9em;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}

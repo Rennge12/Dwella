@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/AddListing.css';
+import axios from 'axios';
 
 const AddListing = () => {
     const [listingData, setListingData] = useState({
@@ -14,31 +15,43 @@ const AddListing = () => {
         setListingData({ ...listingData, [name]: value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Listing added:', listingData);
-    };
+        try{
+            const response = await axios.post('http://localhost:8000/api/addListing',{
+                homeType: listingData.homeType,
+                description: listingData.description,
+                price: listingData.price,
+                location: listingData.location,
+                imageURL: listingData.imageURL
+            });
+        }
+        catch (error) {
+            console.error('Listing error:', error);
+          }
+    }
 
     return (
         <div className="form-container">
             <h2>Pievienot sludinājumu</h2>
-            <form onSubmit={handleSubmit}>
+            <form className = "listing-form" onSubmit={handleSubmit}>
                 <div>
                     <label>Dzīvoklis vai māja:</label>
                     <select name="homeType" value={listingData.homeType} onChange={handleChange}>
                 <option value="">Izvēlies</option>
-                <option value="offering">Dzīvoklis</option>
-                <option value="using">Māja</option>
+                <option value="apartment">Dzīvoklis</option>
+                <option value="house">Māja</option>
+                <option value="single">Istaba</option>
               </select>
                 </div>
-                <div>
+                <div className="columns">
                     <label>Detaļas:</label>
-                    <textarea
+                    <input
                         name="description"
                         onChange={handleChange}
-                    ></textarea>
+                    ></input>
                 </div>
-                <div>
+                <div className="columns">
                     <label>Cena:</label>
                     <input
                         type="number"
@@ -46,18 +59,18 @@ const AddListing = () => {
                         onChange={handleChange}
                     />
                 </div>
-                <div>
+                <div className="columns">
                     <label>Atrašanās vieta:</label>
                     <input
                         name="location"
                         onChange={handleChange}
                     />
                 </div>
-                <div>
+                <div className="columns">
                     <label>Attēli:</label>
                     <input
-                        name="images"
-                        type= "file"
+                        name="imageURL"
+                        type= "text"
                         onChange={handleChange}
                     />
                 </div>

@@ -82,10 +82,8 @@ function Login() {
           const { userID, service_type } = response.data;
           login(userID, email, service_type);
           if (response.data.serviceType === 'offering') {
-            console.log("sie rieksti");
             navigate('/AddListing');
         } else if (response.data.serviceType === 'using') {
-          console.log("sie rieks");
             navigate('/ViewListings');
         }
         }
