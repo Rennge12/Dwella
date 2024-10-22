@@ -1,16 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../AuthProvider';
 import '../styles/Login.css';
 
 function Login() {
   const [isSignUp, setIsSignUp] = useState(false);
   const [user, setUser] = useState(null);
-  const login = (name, service_type) => {
-    localStorage.setItem('name', name);
-    localStorage.setItem('service_type', service_type);
-    setUser({userId: name, service_type})
-  }
+  const { login } = useContext(AuthContext);
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -69,9 +66,6 @@ function Login() {
     }
   };
   
- 
-    
-  
     const handleLogin = async (e) => {
       e.preventDefault();
       try {
@@ -79,8 +73,8 @@ function Login() {
         console.log(response.data);
   
         if (response.data.status === 'success') {
-          const { userID, service_type } = response.data;
-          login(userID, email, service_type);
+          const { id, name, serviceType } = response.data;
+          login(id, name, serviceType);
           if (response.data.serviceType === 'offering') {
             navigate('/AddListing');
         } else if (response.data.serviceType === 'using') {

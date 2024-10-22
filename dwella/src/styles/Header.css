@@ -1,0 +1,9 @@
+.abutton{
+    cursor: pointer;
+}
+a {
+    color: peru;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 10px;
+  }

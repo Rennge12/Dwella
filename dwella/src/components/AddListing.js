@@ -3,6 +3,8 @@ import '../styles/AddListing.css';
 import axios from 'axios';
 
 const AddListing = () => {
+    const [succesMessage, setSuccesMessage] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
     const [listingData, setListingData] = useState({
         homeType: '',
         description: '',
@@ -25,6 +27,12 @@ const AddListing = () => {
                 location: listingData.location,
                 imageURL: listingData.imageURL
             });
+            if(response.data.message === 'Listing created'){
+                setSuccesMessage('Listing created');
+            }else{
+                setErrorMessage('Mising details');
+            };
+            console.log(response.data.message)
         }
         catch (error) {
             console.error('Listing error:', error);
@@ -75,6 +83,10 @@ const AddListing = () => {
                     />
                 </div>
                 <button type="submit">Pievienot</button>
+                {succesMessage?
+                    <a>{succesMessage}</a>:
+                    <a>{errorMessage}</a>
+                }
             </form>
         </div>
     );

@@ -42,7 +42,9 @@ class UserController extends Controller
             return response()->json([
                 'status' => 'success',
                 'message' => 'Login successfull',
-                'serviceType' => $user->service_type
+                'serviceType' => $user->service_type,
+                'name' => $user->name,
+                'id' => $user->id  
             ]);
         } else{
             return response()->json(['status' => 'error', 'message' => 'invalid email or password'], 401);

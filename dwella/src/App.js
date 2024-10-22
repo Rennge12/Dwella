@@ -7,14 +7,17 @@ import Services from './components/Services.js';
 import Login from './components/Login.js';
 import AddListing from './components/AddListing';
 import ViewListings from './components/ViewListings';
+import Header from './components/Header.js';
+import { AuthProvider } from './AuthProvider.js';
 import './App.css';
 
 const App = () => {
   return (
-    <Router> 
-    <div className="App">
-        {/* Navigation Bar */}
-        <nav className="navbar">
+    <AuthProvider>
+      <Router>
+        <div className="App">
+          {/* Navigation Bar */}
+          {/* <nav className="navbar">
           <ul className="nav-links">
             <li><Link to="/">Sākums</Link></li>
             <li><Link to="/about">Par mums</Link></li>
@@ -22,20 +25,20 @@ const App = () => {
             <li><Link to="/services">Piedāvā savu pakalpojumu</Link></li>
             <li><Link to="/login">Ienākt</Link></li>
           </ul>
-        </nav>
-
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contacts" element={<Contacts />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/AddListing" element={<AddListing />} />
-          <Route path="/ViewListings" element={<ViewListings />} />
-        </Routes>
-      </div>
-    </Router>
-      
+        </nav> */}
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contacts" element={<Contacts />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/AddListing" element={<AddListing />} />
+            <Route path="/ViewListings" element={<ViewListings />} />
+          </Routes>
+        </div>
+      </Router>
+    </AuthProvider>
   );
 };
 

@@ -3,7 +3,7 @@ import React from 'react';
 const About = () => {
   return (
     <section className="about-section">
-      <h2>About This Project</h2>
+      <h2>Par Mums</h2>
       <p>
       Kāpēc izvēlēties Dwella?
 Pieejamas cenas: Mēs specializējamies, lai nodrošinātu jums draudzīgu mājokļu, dzīvokļu un īres vietu īri iekārojamās vietās.
