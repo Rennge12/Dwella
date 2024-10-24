@@ -11,6 +11,7 @@ Route::post('/login', [UserController::class, 'login']);
 
 
 Route::get('/listings', [ListingsController::class, 'listings']);
+Route::get('/profile', [UserController::class, 'profile']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

@@ -38,12 +38,6 @@ body {
   padding: 10px;
 }
 
-.nav-links a:hover {
-  background-color: #555;
-  border-radius: 5px;
-}
-
-/* Hero Section */
 .hero {
   background-color: #1abc9c;
   color: white;
@@ -87,13 +81,6 @@ h2 {
   color: #2980b9;
 }
 
-/* Contact Section */
-.contact-section {
-  background-color: #f4f4f4;
-  padding: 50px;
-}
-
-/* Services Section */
 .service-button {
   padding: 10px 20px;
   background-color: #e74c3c;

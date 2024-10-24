@@ -8,6 +8,7 @@ import Login from './components/Login.js';
 import AddListing from './components/AddListing';
 import ViewListings from './components/ViewListings';
 import Header from './components/Header.js';
+import Profile from './components/Profile.js';
 import { AuthProvider } from './AuthProvider.js';
 import './App.css';
 
@@ -35,6 +36,7 @@ const App = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/AddListing" element={<AddListing />} />
             <Route path="/ViewListings" element={<ViewListings />} />
+            <Route path="/Profile" element={<Profile />} />
           </Routes>
         </div>
       </Router>
