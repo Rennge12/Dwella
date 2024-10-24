@@ -29,7 +29,7 @@ const ViewListings = () => {
                         <h className="listing-homeType">{listing.homeType}</h>
                         <p>{listing.location}</p>
                         <p className="listing-description">{listing.description}</p>
-                        <img className="" src={listing.imageURL}></img>
+                        <img className="listingIMG" src={listing.imageURL}></img>
                         <p className="listing-price">Cena: EUR{listing.price}</p>
                     </li>
                 </div>
