@@ -17,16 +17,6 @@ const App = () => {
     <AuthProvider>
       <Router>
         <div className="App">
-          {/* Navigation Bar */}
-          {/* <nav className="navbar">
-          <ul className="nav-links">
-            <li><Link to="/">Sākums</Link></li>
-            <li><Link to="/about">Par mums</Link></li>
-            <li><Link to="/contacts">Kontakti</Link></li>
-            <li><Link to="/services">Piedāvā savu pakalpojumu</Link></li>
-            <li><Link to="/login">Ienākt</Link></li>
-          </ul>
-        </nav> */}
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
