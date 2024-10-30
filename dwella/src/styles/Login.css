@@ -2,15 +2,15 @@
     padding: 50px;
     max-width: 400px;
     margin: 0 auto;
-    background-color: #f9f9f9;
+    background-color: rgb(0, 56, 56);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
-  h2 {
-    color: #2980b9;
-    margin-bottom: 20px;
-  }
+h1 {
+  color: white;
+  margin-bottom: 20px;
+}
   
   form {
     display: flex;
@@ -23,6 +23,7 @@
   
   label {
     font-weight: bold;
+    color: white;
     margin-bottom: 5px;
   }
   
@@ -36,7 +37,7 @@
   
   button[type="submit"] {
     padding: 10px 20px;
-    background-color: #2980b9;
+    background-color:rgb(0, 83, 83);
     color: white;
     border: none;
     border-radius: 5px;
@@ -45,28 +46,29 @@
   }
   
   button[type="submit"]:hover {
-    background-color: #21618c;
+    background-color: rgb(0, 111, 111);
   }
   
   .switch-button {
     background-color: transparent;
     border: none;
-    color: #2980b9;
+    color: white;
     cursor: pointer;
     text-decoration: underline;
     margin-top: 10px;
   }
   
   .switch-button:hover {
-    color: #21618c;
+    color: rgb(0, 111, 111);
+
   }
   
-  /* Extra styling for the service option select box */
+  
   select {
     padding: 10px;
   }
   .error-messages {
-    color: #e74c3c; /* Red color for error */
+    color: #e74c3c; 
     font-size: 0.9em;
     margin-top: -10px;
     margin-bottom: 10px;

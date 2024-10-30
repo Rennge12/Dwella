@@ -41,7 +41,7 @@ const AddListing = () => {
 
     return (
         <div className="form-container">
-            <h2>Pievienot sludinājumu</h2>
+            <h1>Pievienot sludinājumu</h1>
             <form className = "listing-form" onSubmit={handleSubmit}>
                 <div>
                     <label>Dzīvoklis vai māja:</label>

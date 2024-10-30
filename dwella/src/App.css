@@ -1,4 +1,3 @@
-/* General Body and App Styling */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -8,38 +7,11 @@ body {
 
 .App {
   text-align: center;
-}
-
-/* Navigation Bar */
-.navbar {
-  background-color: #333;
-  padding: 10px 0;
-  position: sticky;
-  top: 0;
-  width: 100%;
-}
-
-.nav-links {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-}
-
-.nav-links li {
-  margin: 0 15px;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.1em;
-  padding: 10px;
+  background-color: rgb(0, 56, 56);
 }
 
 .hero {
-  background-color: #1abc9c;
+  background-color: rgb(0, 56, 56);
   color: white;
   padding: 100px 20px;
 }
@@ -47,15 +19,17 @@ body {
 .hero h1 {
   font-size: 3em;
   margin: 0;
+  color: white;
 }
 
 .hero p {
   font-size: 1.2em;
+  color: white;
 }
 
 .cta-button {
   padding: 10px 20px;
-  background-color: #2980b9;
+  background-color:rgb(0, 83, 83);
   color: white;
   text-decoration: none;
   border-radius: 5px;
@@ -64,46 +38,5 @@ body {
 }
 
 .cta-button:hover {
-  background-color: #21618c;
-}
-
-/* About Section */
-.about-section,
-.hobbies-section,
-.contact-section,
-.services-section {
-  padding: 50px 20px;
-  background-color: white;
-  margin: 20px 0;
-}
-
-h2 {
-  color: #2980b9;
-}
-
-.service-button {
-  padding: 10px 20px;
-  background-color: #e74c3c;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.service-button:hover {
-  background-color: #c0392b;
-}
-
-/* Login Section */
-.login-section {
-  padding: 50px;
-}
-
-form {
-  display: inline-block;
-  text-align: left;
-}
-
-form div {
-  margin-bottom: 10px;
+  background-color: rgb(0, 111, 111);
 }

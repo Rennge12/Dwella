@@ -88,10 +88,11 @@ function Login() {
   
 
   return (
+    <div clasName="main">
     <div className="login-signup-section">
       {!isSignUp ? (
         <div className="login-form">
-          <h2>Ienākt</h2>
+          <h1>Ienākt</h1>
           <form onSubmit={handleLogin}>
             <div>
               <label>E-pasts: </label>
@@ -109,7 +110,7 @@ function Login() {
         </div>
       ) : (
         <div className="signup-form">
-          <h2>Reģistrēties</h2>
+          <h1>Reģistrēties</h1>
           <form onSubmit={handleSubmit}>
             <div>
               <label>Vārds: </label>
@@ -147,6 +148,7 @@ function Login() {
           <p>Jau ir konts? <button className="switch-button" onClick={handleSignUpSwitch}>Ienākt</button></p>
         </div>
       )}
+    </div>
     </div>
   );
 };
